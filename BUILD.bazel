@@ -1,0 +1,20 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+load("@rules_go//go:def.bzl", "TOOLS_NOGO", "nogo")
+
+nogo(
+    name = "nogo",
+    visibility = ["//visibility:public"],
+    deps = TOOLS_NOGO,
+)
+
+go_library(
+    name = "rand32_lib",
+    srcs = ["rand32.go"],
+    visibility = ["//visibility:private"],
+)
+
+go_binary(
+    name = "rand32",
+    embed = [":rand32_lib"],
+    visibility = ["//visibility:public"],
+)

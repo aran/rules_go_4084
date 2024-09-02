@@ -1,0 +1,11 @@
+# OSX leaves these everywhere on SMB shares
+._*
+
+# OSX trash
+.DS_Store
+
+# From https://github.com/bazelbuild/bazel/blob/master/.gitignore
+
+/bazel-*
+# Ignore outputs generated during Bazel bootstrapping.
+/output/
